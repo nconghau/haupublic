@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nconghau public | Creative Innovations & Open Source</title>
+  <meta name="description"
+    content="Dive into nconghau creative lab. A collection of open-source projects, AI experiments, and useful utilities where technology meets creativity.">
+  <meta name="keywords"
+    content="nconghau, Creative Lab, Open Source, AI Experiments, Web Development, Portfolio, Innovation, Technology, Software Engineer">
+  <meta name="author" content="nconghau">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://haupublic.surge.sh/">
+  <meta property="og:title" content="nconghau public | Creative Innovations & Open Source">
+  <meta property="og:description"
+    content="Explore a playground of technology and creativity. Open-source projects, AI tools, and innovations by NCongHau.">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/dkeupjars/image/upload/v1758115946/nconghau/haunc-avatar_jfnz1z.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://haupublic.surge.sh/">
+  <meta property="twitter:title" content="nconghau public | Creative Innovations & Open Source">
+  <meta property="twitter:description"
+    content="Explore a playground of technology and creativity. Open-source projects, AI tools, and innovations by NCongHau.">
+  <meta property="twitter:image"
+    content="https://res.cloudinary.com/dkeupjars/image/upload/v1758115946/nconghau/haunc-avatar_jfnz1z.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#8b5cf6', // violet-500
+            secondary: '#3b82f6', // blue-500
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Custom Utilities */
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .text-glow {
+      text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    }
+
+    /* Gradient Animation for Hero Text */
+    .animate-text-gradient {
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-flow 5s ease infinite;
+    }
+
+    @keyframes gradient-flow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .hover-scale-img {
+      transition: transform 0.5s ease;
+    }
+
+    .group:hover .hover-scale-img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-violet-500 selection:text-white overflow-x-hidden relative">
+
+  <!-- Background Elements -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div
+      class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-violet-600/20 rounded-full blur-[120px] animate-pulse">
+    </div>
+    <div
+      class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"
+      style="animation-delay: 2s;"></div>
+  </div>
+
+  <!-- Navigation (Simple) -->
+  <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+    <div
+      class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center glass-card rounded-b-2xl mx-4 mt-2 border-t-0">
+      <a href="#" class="text-xl font-bold tracking-tight hover:text-violet-400 transition-colors">nconghau <span
+          class="text-violet-500">public</span><span class="text-violet-500">.</span></a>
+      <div class="flex items-center gap-4 md:gap-6">
+        <div class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
+          <a href="#projects" class="hover:text-violet-400 transition-colors" data-i18n="nav_projects">Projects</a>
+          <a href="#about" class="hover:text-violet-400 transition-colors" data-i18n="nav_about">About</a>
+        </div>
+        <!-- Language Switcher -->
+        <button id="lang-toggle"
+          class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-300 hover:text-white hover:border-violet-500 transition-colors">
+          EN / VI
+        </button>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn"
+          class="md:hidden text-slate-300 hover:text-violet-400 transition-colors text-xl p-1">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full px-4 mt-2">
+      <div
+        class="glass-card rounded-2xl p-6 flex flex-col gap-4 text-center border-t border-slate-700/50 shadow-2xl backdrop-blur-xl">
+        <a href="#projects"
+          class="text-lg font-medium hover:text-violet-400 transition-colors py-2 border-b border-slate-700/50"
+          data-i18n="nav_projects" onclick="toggleMobileMenu()">Projects</a>
+        <a href="#about" class="text-lg font-medium hover:text-violet-400 transition-colors py-2" data-i18n="nav_about"
+          onclick="toggleMobileMenu()">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Public Projects Section (Moved to Top) -->
+  <section id="projects" class="pt-32 pb-16 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+          <span data-i18n="hero_title_1">Explore</span> <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-blue-400"
+            data-i18n="hero_title_highlight">Creative
+            Innovations</span>
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed" data-i18n="hero_desc">
+          Dive into my open-source lab where technology meets creativity. These projects are built to solve real
+          problems with a touch of fun.
+        </p>
+        <p class="text-lg text-violet-400 font-semibold mt-2" data-i18n="hero_cta">Don't just look—try them out! 🚀</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+        <!-- Project 1 -->
+        <article
+          class="group glass-card rounded-2xl overflow-hidden hover:border-violet-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/10 flex flex-col h-full">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://res.cloudinary.com/dkeupjars/image/upload/v1765298289/agent/thay-tu-online-banner_bodf9j.png"
+              alt="Thầy Tư Online" class="w-full h-full object-cover object-top hover-scale-img">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-bold text-white group-hover:text-violet-400 transition-colors">
+                <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank">Thầy Tư Online</a>
+              </h3>
+              <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank"
+                class="text-slate-400 hover:text-violet-400 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <p class="text-slate-400 mb-6 line-clamp-3">
+              <span data-i18n="proj_thaytu_desc">Experience a unique fusion of AI and Vietnamese culture. Ask 'Thầy Tư'
+                about your fortune, love life, or
+                career—powered by advanced GenAI for surprisingly deep insights.</span>
+              <br><span class="text-violet-300 text-sm mt-2 font-medium" data-i18n="proj_thaytu_cta">✨ Give it a spin to
+                see your future!</span>
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-slate-800 text-yellow-300 border border-slate-700">Python</span>
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-slate-800 text-blue-300 border border-slate-700">Google
+                GenAI</span>
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-slate-800 text-green-300 border border-slate-700">Flask</span>
+            </div>
+
+            <div class="mt-auto flex gap-4">
+              <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank"
+                class="flex-1 text-center py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-lg font-medium transition-all shadow-lg shadow-violet-900/20 group-hover:shadow-violet-600/30"
+                data-i18n="btn_live_demo_thaytu">
+                Live Demo
+              </a>
+              <a href="https://github.com/nconghau/thay-tu-online-adk" target="_blank"
+                class="flex-1 text-center py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg font-medium transition-all border border-slate-700"
+                data-i18n="btn_source_code">
+                Source Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article
+          class="group glass-card rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col h-full">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://res.cloudinary.com/dkeupjars/image/upload/v1765379133/other_project/ipavn_banner_gsime7.png"
+              alt="IPA Free - English-Vietnamese Translator"
+              class="w-full h-full object-cover object-top hover-scale-img">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                <a href="https://ipafree.surge.sh/" target="_blank" data-i18n="proj_ipa_title">IPA Free Translator</a>
+              </h3>
+              <a href="https://ipafree.surge.sh/" target="_blank"
+                class="text-slate-400 hover:text-blue-400 transition-colors">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <p class="text-slate-400 mb-6 line-clamp-3">
+              <span data-i18n="proj_ipa_desc">Struggling with English pronunciation? This tool visualizes your speech
+                with IPA symbols in real-time.
+                Perfect for learners wanting to polish their accent.</span>
+              <br><span class="text-blue-300 text-sm mt-2 font-medium" data-i18n="proj_ipa_cta">🎤 Test your voice
+                now!</span>
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-slate-800 text-pink-300 border border-slate-700">Web
+                Speech API</span>
+              <span
+                class="px-3 py-1 text-xs font-medium rounded-full bg-slate-800 text-orange-300 border border-slate-700">HTML5
+                / JS</span>
+            </div>
+
+            <div class="mt-auto flex gap-4">
+              <a href="https://ipafree.surge.sh/" target="_blank"
+                class="flex-1 text-center py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-900/20 group-hover:shadow-blue-600/30"
+                data-i18n="btn_live_demo_ipa">
+                Live Demo
+              </a>
+              <a href="https://github.com/nconghau/ipafree" target="_blank"
+                class="flex-1 text-center py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg font-medium transition-all border border-slate-700"
+                data-i18n="btn_source_code">
+                Source Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Brief Profile Section -->
+  <section id="about" class="py-16 relative overflow-hidden bg-slate-800/30">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="glass-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <!-- Avatar -->
+        <div class="relative shrink-0">
+          <div
+            class="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-violet-500 to-blue-500 shadow-xl shadow-violet-500/20">
+            <img src="https://res.cloudinary.com/dkeupjars/image/upload/v1758115946/nconghau/haunc-avatar_jfnz1z.jpg"
+              alt="NCongHau Avatar" class="w-full h-full rounded-full object-cover border-4 border-slate-900">
+          </div>
+        </div>
+
+        <!-- Short Info -->
+        <div class="text-center md:text-left flex-1">
+          <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 mb-2">
+            nconghau</h2>
+          <h3 class="text-lg text-violet-400 font-medium mb-4" data-i18n="profile_role">FullStack Developer</h3>
+          <p class="text-slate-300 leading-relaxed mb-6 text-sm md:text-base" data-i18n="profile_bio">
+            Focused on building valuable products for the community. Passionate about automating workflows and
+            optimizing system performance.
+          </p>
+
+          <div class="flex flex-wrap justify-center md:justify-start gap-4">
+            <a href="https://haudev.surge.sh/" target="_blank"
+              class="px-5 py-2 rounded-full bg-slate-700/50 hover:bg-violet-600 text-white text-sm font-medium transition-all border border-slate-600 hover:border-violet-500">
+              <i class="fa-solid fa-id-card mr-2"></i><span data-i18n="btn_full_profile">Full Profile</span>
+            </a>
+            <div class="flex gap-4 items-center pl-2">
+              <a href="https://github.com/nconghau" target="_blank"
+                class="text-slate-400 hover:text-white transition-colors"><i
+                  class="fa-brands fa-github text-xl"></i></a>
+              <a href="https://www.linkedin.com/in/cong-hau-51665a205" target="_blank"
+                class="text-slate-400 hover:text-blue-500 transition-colors"><i
+                  class="fa-brands fa-linkedin-in text-xl"></i></a>
+              <a href="https://www.facebook.com/nconghauu" target="_blank"
+                class="text-slate-400 hover:text-blue-600 transition-colors"><i
+                  class="fa-brands fa-facebook text-xl"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-800 bg-slate-900">
+    <div class="max-w-6xl mx-auto px-6 text-center text-slate-600 text-sm">
+      <p>&copy; @nconghau - v1.0.0</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      const navContainer = navbar.querySelector('div');
+
+      if (window.scrollY > 50) {
+        navContainer.classList.remove('mx-4', 'mt-2', 'border-t-0');
+        navContainer.classList.add('px-8', 'w-full', 'max-w-full', 'rounded-none', 'border-b', 'border-slate-800');
+      } else {
+        navContainer.classList.add('mx-4', 'mt-2', 'border-t-0');
+        navContainer.classList.remove('px-8', 'w-full', 'max-w-full', 'rounded-none', 'border-b', 'border-slate-800');
+      }
+    });
+
+    // Language Handling
+    const translations = {
+      en: {
+        nav_projects: "My Corner",
+        nav_about: "About Me",
+        hero_title_1: "Hello",
+        hero_title_highlight: "Friend! ✨",
+        hero_desc: "Welcome to my corner of fun coding projects 😎 hope they are interesting and useful enough for you!",
+        hero_cta: "Try it out now! 🚀",
+        proj_thaytu_desc: "A super cute AI fortune teller! 'Thầy Tư' combines magic and tech to whisper sweet predictions about your future. Give it a try!",
+        proj_thaytu_cta: "✨ See what the stars say!",
+        btn_live_demo_thaytu: "Try it out",
+        btn_live_demo_ipa: "Try it out",
+        btn_source_code: "See Code",
+        proj_ipa_title: "IPA Free Translator",
+        proj_ipa_desc: "English pronunciation made easy-peasy! This cute tool listens to you and shows IPA symbols so you can sound amazing.",
+        proj_ipa_cta: "🎤 Sing into the mic!",
+        profile_role: "❤️ ☕",
+        profile_bio: "Turning lines of code into useful fun. Passionate about creating interesting things. Feel free to contact me for feedback!",
+        btn_full_profile: "Visit my wonderland",
+      },
+      vi: {
+        nav_projects: "Góc nhỏ",
+        nav_about: "Tui là ai?",
+        hero_title_1: "Chào bạn",
+        hero_title_highlight: "Ghé Chơi! ✨",
+        hero_desc: "Chào mừng bạn tới góc nhỏ mấy dự án code vui vui của tui 😎 mong nó đủ thú vị và hữu ích với bạn!",
+        hero_cta: "Thử ngay nào 🚀",
+        proj_thaytu_desc: "Thầy Tư rất cute, phán cũng chuẩn! Một sự kết hợp đáng yêu giữa tâm linh và AI để thủ thỉ về tương lai của bạn.",
+        proj_thaytu_cta: "✨ Gieo một quẻ vui vẻ nào!",
+        btn_live_demo_thaytu: "Thầy Tư bói ngay",
+        btn_live_demo_ipa: "Sài thử ngay",
+        btn_source_code: "Source code",
+        proj_ipa_title: "Dịch IPA miễn phí",
+        proj_ipa_desc: "Phát âm tiếng Anh đúng chuẩn vì có công cụ dịch IPA miễn phí nhé.",
+        proj_ipa_cta: "🎤 Thử giọng oanh vàng xem!",
+        profile_role: "❤️ ☕",
+        profile_bio: "Thích biến mấy dòng code thành niềm vui hữu ích. Đam mê tạo ra mấy thứ thú vị. Liên hệ feedback mình nếu có nhé!",
+        btn_full_profile: "Thông tin về tui",
+      }
+    };
+
+    const langToggleBtn = document.getElementById('lang-toggle');
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function updateLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          element.innerText = translations[lang][key];
+        }
+      });
+      langToggleBtn.innerText = lang === 'en' ? 'EN' : 'VI';
+      localStorage.setItem('lang', lang);
+      currentLang = lang;
+    }
+
+    // Initialize Language
+    updateLanguage(currentLang);
+
+    // Toggle Event
+    langToggleBtn.addEventListener('click', () => {
+      const newLang = currentLang === 'en' ? 'vi' : 'en';
+      updateLanguage(newLang);
+    });
+
+    // Mobile Menu Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden');
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenuIcon.classList = isHidden ? 'fa-solid fa-bars' : 'fa-solid fa-xmark';
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+        toggleMobileMenu();
+      }
+    });
+  </script>
+</body>
+
+</html>
