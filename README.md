@@ -1,6 +1,6 @@
 # nconghau public
 
-![Banner](https://res.cloudinary.com/dkeupjars/image/upload/v1758115946/nconghau/haunc-avatar_jfnz1z.jpg)
+![Banner](https://res.cloudinary.com/dkeupjars/image/upload/v1765701223/other_project/haupublic-banner_u15tw0.png)
 
 **Creative Innovations & Open Source Lab**
 
@@ -20,25 +20,9 @@ English pronunciation tool for learners.
 - **Tech**: Web Speech API, HTML5, JavaScript.
 - **Features**: Visualizes your speech with IPA symbols in real-time to help polish your accent.
 
-## 🛠️ Technology Stack
-
-- **Core**: HTML5, Semantic HTML.
-- **Styling**: Tailwind CSS (via CDN), Custom CSS animations.
-- **Scripting**: Vanilla JavaScript not frameworks.
-- **Deployment**: Surge.sh.
-
-## 🚀 Deployment
-
-The project is configured for easy deployment to Surge.sh.
-
-```bash
-# Deploy to production
-./deploy.sh
-```
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
-© 2025 NCongHau.
+@nconghau - v1.0.0
