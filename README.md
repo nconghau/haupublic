@@ -1,6 +1,6 @@
 # nconghau public
 
-![Banner](https://res.cloudinary.com/dkeupjars/image/upload/v1765701223/other_project/haupublic-banner_u15tw0.png)
+![Banner](https://res.cloudinary.com/dkeupjars/image/upload/v1765718405/other_project/haupublic-banner-04_ssqani.png)
 
 **Creative Innovations & Open Source Lab**
 
