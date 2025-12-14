@@ -331,7 +331,7 @@
   <!-- Footer -->
   <footer class="py-8 border-t border-slate-800 bg-slate-900">
     <div class="max-w-6xl mx-auto px-6 text-center text-slate-600 text-sm">
-      <p>&copy; @nconghau - v1.0.0</p>
+      <p>@nconghau - v1.0.0</p>
     </div>
   </footer>
 
@@ -357,19 +357,19 @@
         nav_about: "About Me",
         hero_title_1: "Hello",
         hero_title_highlight: "Friend! ✨",
-        hero_desc: "Welcome to my corner of fun coding projects 😎 hope they are interesting and useful enough for you!",
+        hero_desc: "Welcome to my little corner of fun coding projects 😎 hope they are interesting and useful to you!",
         hero_cta: "Try it out now! 🚀",
-        proj_thaytu_desc: "A super cute AI fortune teller! 'Thầy Tư' combines magic and tech to whisper sweet predictions about your future. Give it a try!",
-        proj_thaytu_cta: "✨ See what the stars say!",
-        btn_live_demo_thaytu: "Try it out",
-        btn_live_demo_ipa: "Try it out",
-        btn_source_code: "See Code",
-        proj_ipa_title: "IPA Free Translator",
-        proj_ipa_desc: "English pronunciation made easy-peasy! This cute tool listens to you and shows IPA symbols so you can sound amazing.",
-        proj_ipa_cta: "🎤 Sing into the mic!",
+        proj_thaytu_desc: "Thay Tu is very cute and accurate! A lovely blend of spirituality and AI to whisper about your future.",
+        proj_thaytu_cta: "✨ Cast a joyful prediction!",
+        btn_live_demo_thaytu: "Ask Thay Tu now",
+        btn_live_demo_ipa: "Try it now",
+        btn_source_code: "Source Code",
+        proj_ipa_title: "Free IPA Translator",
+        proj_ipa_desc: "Achieve standard English pronunciation with this free IPA translation tool.",
+        proj_ipa_cta: "🎤 Try reading standard English IPA!",
         profile_role: "❤️ ☕",
-        profile_bio: "Turning lines of code into useful fun. Passionate about creating interesting things. Feel free to contact me for feedback!",
-        btn_full_profile: "Visit my wonderland",
+        profile_bio: "Love turning lines of code into useful joy. Passionate about creating interesting things. Feel free to contact me for feedback!",
+        btn_full_profile: "About me",
       },
       vi: {
         nav_projects: "Góc nhỏ",
@@ -385,7 +385,7 @@
         btn_source_code: "Source code",
         proj_ipa_title: "Dịch IPA miễn phí",
         proj_ipa_desc: "Phát âm tiếng Anh đúng chuẩn vì có công cụ dịch IPA miễn phí nhé.",
-        proj_ipa_cta: "🎤 Thử giọng oanh vàng xem!",
+        proj_ipa_cta: "🎤 Thử đọc chuẩn IPA tiếng Anh nào!",
         profile_role: "❤️ ☕",
         profile_bio: "Thích biến mấy dòng code thành niềm vui hữu ích. Đam mê tạo ra mấy thứ thú vị. Liên hệ feedback mình nếu có nhé!",
         btn_full_profile: "Thông tin về tui",
@@ -393,7 +393,7 @@
     };
 
     const langToggleBtn = document.getElementById('lang-toggle');
-    let currentLang = localStorage.getItem('lang') || 'en';
+    let currentLang = localStorage.getItem('lang') || 'vi';
 
     function updateLanguage(lang) {
       document.querySelectorAll('[data-i18n]').forEach(element => {
