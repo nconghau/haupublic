@@ -8,18 +8,6 @@ Welcome to my public corner of the web! This repository hosts the landing page f
 
 🔗 **Live Demo:** [https://haupublic.surge.sh/](https://haupublic.surge.sh/)
 
-## ✨ Featured Projects
-
-### 🔮 Thầy Tư Online (AI Fortune Teller)
-A unique fusion of Vietnamese spiritual culture and modern Artificial Intelligence.
-- **Tech**: Python, Google GenAI, Flask.
-- **Experience**: Ask "Thầy Tư" about your fortune, love, or career and get surprisingly deep (and cute) insights.
-
-### 🗣️ IPA Free Translator
-English pronunciation tool for learners.
-- **Tech**: Web Speech API, HTML5, JavaScript.
-- **Features**: Visualizes your speech with IPA symbols in real-time to help polish your accent.
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
