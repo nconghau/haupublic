@@ -84,12 +84,12 @@
             "position": 1,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "Thầy Tư Online",
-              "applicationCategory": "EntertainmentApplication",
+              "name": "TalkOrDrink",
+              "applicationCategory": "GameApplication",
               "operatingSystem": "Web",
-              "url": "https://nconghau-thay-tu-online.hf.space/",
-              "description": "Trải nghiệm bói vui mang màu sắc văn hóa Việt kết hợp cùng AI trong cuộc trò chuyện gần gũi.",
-              "image": "https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765298289/agent/thay-tu-online-banner_bodf9j.png",
+              "url": "https://talkordrink.surge.sh/",
+              "description": "Game bài Truth or Dare trực tuyến tương tác cao cho Gen Z với giao diện Y2K.",
+              "image": "https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765720971/other_project/talkordrink-banner-03_gyssmx.png",
               "author": { "@id": "https://haupublic.surge.sh/#creator" }
             }
           },
@@ -113,12 +113,12 @@
             "position": 3,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "TalkOrDrink",
-              "applicationCategory": "GameApplication",
+              "name": "Thầy Tư Online",
+              "applicationCategory": "EntertainmentApplication",
               "operatingSystem": "Web",
-              "url": "https://talkordrink.surge.sh/",
-              "description": "Game bài Truth or Dare trực tuyến tương tác cao cho Gen Z với giao diện Y2K.",
-              "image": "https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765720971/other_project/talkordrink-banner-03_gyssmx.png",
+              "url": "https://nconghau-thay-tu-online.hf.space/",
+              "description": "Trải nghiệm bói vui mang màu sắc văn hóa Việt kết hợp cùng AI trong cuộc trò chuyện gần gũi.",
+              "image": "https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765298289/agent/thay-tu-online-banner_bodf9j.png",
               "author": { "@id": "https://haupublic.surge.sh/#creator" }
             }
           },
@@ -158,8 +158,15 @@
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           colors: {
-            primary: '#fa760c', // Orange from haudev (#fa760c)
-            secondary: '#405b84', // Blue-gray from haudev (#405b84)
+            primary: {
+              DEFAULT: '#fa760c',
+              hover: '#e05e00',
+              50: '#fffaf5',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+            },
+            secondary: '#405b84',
           }
         }
       }
@@ -176,41 +183,42 @@
     }
 
     body {
-      background-color: #f8fafc;
+      background-color: #faf9f7;
+      background-image: radial-gradient(ellipse at 50% -5%, rgba(251, 146, 60, 0.08), rgba(250, 118, 12, 0.02) 45%, transparent 75%);
       color: #0f172a;
     }
 
     /* Custom Utilities */
     .glass-nav {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(226, 232, 240, 0.9);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(254, 215, 170, 0.45);
     }
 
     .project-card {
       background-color: #ffffff;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
-      transition: all 0.2s ease;
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .project-card:hover {
       border-color: #fed7aa;
-      box-shadow: 0 10px 25px -5px rgba(250, 118, 12, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 12px 28px -6px rgba(250, 118, 12, 0.1), 0 6px 12px -4px rgba(15, 23, 42, 0.03);
       transform: translateY(-2px);
     }
 
     .primary-cta {
       background: #fa760c;
       color: #ffffff;
-      box-shadow: 0 1px 2px 0 rgba(250, 118, 12, 0.2);
+      box-shadow: 0 2px 4px 0 rgba(250, 118, 12, 0.22);
       transition: all 0.15s ease;
     }
 
     .primary-cta:hover {
       background: #e05e00;
-      box-shadow: 0 4px 12px rgba(250, 118, 12, 0.32);
+      box-shadow: 0 6px 16px rgba(250, 118, 12, 0.32);
       transform: translateY(-1px);
     }
 
@@ -218,18 +226,24 @@
       background: #ffffff;
       color: #334155;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
       transition: all 0.15s ease;
     }
 
     .secondary-cta:hover {
-      background: #f8fafc;
+      background: #fffaf5;
       color: #0f172a;
-      border-color: #cbd5e1;
+      border-color: #fed7aa;
+    }
+
+    .callout-pill {
+      background: #fffaf5;
+      border: 1px solid #ffedd5;
+      color: #9a3412;
     }
 
     .hover-scale-img {
-      transition: transform 0.4s ease;
+      transition: transform 0.45s ease;
     }
 
     .group:hover .hover-scale-img {
@@ -266,7 +280,7 @@
 </head>
 
 <body
-  class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-orange-100 selection:text-orange-950 overflow-x-hidden relative">
+  class="bg-[#faf9f7] text-slate-800 font-sans antialiased selection:bg-orange-100 selection:text-orange-950 overflow-x-hidden relative">
 
   <a href="#projects"
     class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#fa760c] focus:px-4 focus:py-2 focus:text-white shadow-md">Skip
@@ -280,9 +294,28 @@
   <!-- Navigation -->
   <nav class="fixed w-full z-50 top-0 px-3 sm:px-4 pt-2 transition-all duration-300" id="navbar">
     <div
-      class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center glass-nav rounded-2xl shadow-sm transition-all">
-      <a href="#" class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 hover:text-[#fa760c] transition-colors">nconghau <span
-          class="text-[#fa760c]">public</span><span class="text-[#fa760c]">.</span></a>
+      class="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex justify-between items-center glass-nav rounded-2xl shadow-sm transition-all">
+      
+      <!-- Brand & Project Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <svg class="w-8 h-8 flex-shrink-0 transition-transform duration-200 group-hover:scale-105" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="brand-logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fb923c" />
+              <stop offset="100%" stop-color="#fa760c" />
+            </linearGradient>
+          </defs>
+          <rect width="40" height="40" rx="11" fill="url(#brand-logo-bg)" />
+          <!-- Stylized "n" -->
+          <path d="M12 27V16.5C12 13.5 14.5 11 18 11C21.5 11 24 13.5 24 16.5V27" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Creative Spark -->
+          <path d="M28 8L29.1 10.9L32 12L29.1 13.1L28 16L26.9 13.1L24 12L26.9 10.9Z" fill="#ffedd5" />
+        </svg>
+        <span class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#fa760c] transition-colors">
+          nconghau <span class="text-[#fa760c]">public</span><span class="text-[#fa760c]">.</span>
+        </span>
+      </a>
+
       <div class="flex items-center gap-2 sm:gap-4">
         <div class="hidden sm:flex gap-5 text-sm font-medium text-slate-600">
           <a href="#projects" class="hover:text-slate-900 transition-colors" data-i18n="nav_projects">Sản phẩm</a>
@@ -290,13 +323,13 @@
         </div>
         <!-- Language Switcher -->
         <button id="lang-toggle"
-          class="px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-200/80 transition-colors"
+          class="px-2.5 py-1 rounded-full bg-orange-50/80 border border-orange-200/80 text-xs font-semibold text-orange-800 hover:text-orange-950 hover:bg-orange-100 transition-colors"
           aria-label="Chuyển sang tiếng Anh">
           EN
         </button>
         <!-- Mobile Menu Button -->
         <button id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false"
-          class="sm:hidden text-slate-600 hover:text-slate-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 flex items-center justify-center">
+          class="sm:hidden text-slate-600 hover:text-slate-900 transition-colors p-1.5 rounded-lg hover:bg-orange-50 flex items-center justify-center">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -307,9 +340,9 @@
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu" class="hidden sm:hidden max-w-6xl mx-auto mt-2">
       <div
-        class="bg-white/95 backdrop-blur-md rounded-2xl p-5 flex flex-col gap-3 text-center border border-slate-200/90 shadow-xl">
+        class="bg-white/95 backdrop-blur-md rounded-2xl p-5 flex flex-col gap-3 text-center border border-orange-100 shadow-xl">
         <a href="#projects"
-          class="text-base font-medium text-slate-700 hover:text-[#fa760c] transition-colors py-2 border-b border-slate-100"
+          class="text-base font-medium text-slate-700 hover:text-[#fa760c] transition-colors py-2 border-b border-stone-100"
           data-i18n="nav_projects" onclick="toggleMobileMenu()">Sản phẩm</a>
         <a href="#about" class="text-base font-medium text-slate-700 hover:text-[#fa760c] transition-colors py-2" data-i18n="nav_about"
           onclick="toggleMobileMenu()">Về mình</a>
@@ -321,20 +354,30 @@
   <section id="projects" class="pt-32 md:pt-40 pb-16 relative">
     <div class="max-w-6xl mx-auto px-6">
       <div class="mb-14 md:mb-16 max-w-4xl">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 tracking-[-0.04em] leading-[1.08] text-slate-900">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 tracking-[-0.04em] leading-[1.08] text-slate-900 flex flex-wrap items-center gap-x-3 gap-y-2">
           <span data-i18n="hero_title_1">Chào bạn</span>
-          <span class="text-[#fa760c]"
-            data-i18n="hero_title_highlight">Ghé Chơi! ✨</span>
+          <span class="text-[#fa760c] inline-flex items-center gap-2">
+            <span data-i18n="hero_title_highlight">Ghé Chơi!</span>
+            <!-- Custom Spark SVG Icon -->
+            <svg class="w-7 h-7 sm:w-9 sm:h-9 text-[#fa760c] fill-[#fa760c] animate-pulse" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2L14.4 8.6L21 11L14.4 13.4L12 20L9.6 13.4L3 11L9.6 8.6L12 2Z"/>
+              <circle cx="19" cy="5" r="1.5" class="fill-amber-400"/>
+            </svg>
+          </span>
           <span class="sr-only"> - nconghau creative lab | Các dự án công nghệ, phần mềm mã nguồn mở & thử nghiệm AI</span>
         </h1>
         <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed" data-i18n="hero_desc">
-          Chào mừng bạn tới góc nhỏ mấy dự án code vui vui của tui 😎 mong nó đủ thú vị và hữu ích với bạn!
+          Chào mừng bạn tới góc nhỏ mấy dự án code vui vui của tui, mong nó đủ thú vị và hữu ích với bạn!
         </p>
         <div class="mt-8 flex">
           <a href="#selected-work"
             class="primary-cta inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all">
-            <span data-i18n="hero_cta">Thử ngay nào 🚀</span>
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <!-- Custom Rocket SVG Icon -->
+            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.58-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+            </svg>
+            <span data-i18n="hero_cta">Thử ngay nào</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </a>
@@ -348,58 +391,65 @@
         </div>
       </div>
 
+      <!-- 4 Projects in exact order: 1. TalkOrDrink -> 2. Dịch IPA miễn phí -> 3. Thầy Tư Online -> 4. Thiệp Online -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
-        <!-- Project 1 -->
+        <!-- Project 1: TalkOrDrink -->
         <article
           class="project-card group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col h-full">
-          <div class="relative aspect-video sm:aspect-[16/7] md:aspect-video overflow-hidden bg-slate-100 border-b border-slate-100">
+          <div class="relative aspect-video sm:aspect-[16/7] md:aspect-video overflow-hidden bg-orange-50/40 border-b border-stone-100">
             <img
-              src="https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765298289/agent/thay-tu-online-banner_bodf9j.png"
-              alt="Thầy Tư Online product preview" width="2752" height="1536"
+              src="https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765720971/other_project/talkordrink-banner-03_gyssmx.png"
+              alt="TalkOrDrink - Truth or Dare Game" width="3584" height="1184" loading="lazy" decoding="async"
               class="w-full h-full object-cover object-center hover-scale-img">
           </div>
           <div class="p-5 sm:p-6 md:p-7 flex-1 flex flex-col">
             <div class="mb-3 flex items-center justify-between">
-              <span class="text-xs font-semibold tracking-wider uppercase text-slate-500" data-i18n="cat_ai">AI</span>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600"><span
-                  class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span></span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-orange-50 text-orange-700 border border-orange-200/60" data-i18n="cat_games">Games</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50/80 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span>
+              </span>
             </div>
             <div class="flex justify-between items-start mb-3">
               <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#fa760c] transition-colors">
-                <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank" rel="noopener noreferrer">Thầy Tư
-                  Online</a>
+                <a href="https://talkordrink.surge.sh/" target="_blank" rel="noopener noreferrer"
+                  data-i18n="proj_talkordrink_title">TalkOrDrink</a>
               </h3>
-              <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank" rel="noopener noreferrer"
-                aria-label="Open Thầy Tư Online"
-                class="text-slate-400 hover:text-slate-700 transition-colors p-1">
+              <a href="https://talkordrink.surge.sh/" target="_blank" rel="noopener noreferrer"
+                aria-label="Open TalkOrDrink" class="text-slate-400 hover:text-[#fa760c] transition-colors p-1">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
             </div>
-            <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
-              <span data-i18n="proj_thaytu_desc">Một trải nghiệm bói vui mang màu sắc văn hóa Việt, kết hợp cùng AI trong cuộc trò chuyện gần gũi và dí dỏm.</span>
-              <br><span class="text-[#fa760c] text-sm mt-2 font-medium" data-i18n="proj_thaytu_cta">✨ Gieo một quẻ vui vẻ nào!</span>
+            <p class="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed" data-i18n="proj_talkordrink_desc">
+              Game bài Truth or Dare online cực cháy cho Gen Z. 4 bộ bài độc lạ, hiệu ứng 3D xịn xò, đảm bảo khuấy đảo mọi cuộc vui!
             </p>
+
+            <!-- Custom Callout Box with Cheers SVG -->
+            <div class="callout-pill rounded-xl px-3.5 py-2 mb-6 flex items-center gap-2 text-sm font-medium">
+              <svg class="w-4 h-4 text-[#fa760c] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8m-4-4v4m6-17l2 7a4 4 0 01-4 4H8a4 4 0 01-4-4l2-7h12z"/>
+              </svg>
+              <span data-i18n="proj_talkordrink_cta">Chơi ngay kẻo lỡ!</span>
+            </div>
 
             <div class="flex flex-wrap gap-2 mb-6">
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">Python</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">HTML/JS</span>
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">Google
-                GenAI</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">Tailwind</span>
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">Flask</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">Confetti</span>
             </div>
 
             <div class="mt-auto flex gap-3">
-              <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank" rel="noopener noreferrer"
+              <a href="https://talkordrink.surge.sh/" target="_blank" rel="noopener noreferrer"
                 class="primary-cta flex-1 text-center py-2.5 rounded-xl text-sm font-semibold transition-all"
-                data-i18n="btn_live_demo_thaytu">
-                Gặp Thầy Tư
+                data-i18n="btn_live_demo_talkordrink">
+                Chơi luôn
               </a>
-              <a href="https://github.com/nconghau/thay-tu-online-adk" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/nconghau/talkordrink" target="_blank" rel="noopener noreferrer"
                 class="secondary-cta flex-1 text-center py-2.5 rounded-xl text-sm font-semibold transition-all"
                 data-i18n="btn_source_code">
                 Source code
@@ -408,10 +458,10 @@
           </div>
         </article>
 
-        <!-- Project 2 -->
+        <!-- Project 2: Dịch IPA miễn phí -->
         <article
           class="project-card group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col h-full">
-          <div class="relative aspect-video sm:aspect-[16/7] md:aspect-video overflow-hidden bg-slate-100 border-b border-slate-100">
+          <div class="relative aspect-video sm:aspect-[16/7] md:aspect-video overflow-hidden bg-orange-50/40 border-b border-stone-100">
             <img
               src="https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765379133/other_project/ipavn_banner_gsime7.png"
               alt="IPA Free - English-Vietnamese Translator"
@@ -420,9 +470,10 @@
           </div>
           <div class="p-5 sm:p-6 md:p-7 flex-1 flex flex-col">
             <div class="mb-3 flex items-center justify-between">
-              <span class="text-xs font-semibold tracking-wider uppercase text-slate-500" data-i18n="cat_tools">Tools</span>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600"><span
-                  class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span></span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-50 text-amber-800 border border-amber-200/60" data-i18n="cat_tools">Tools</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50/80 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span>
+              </span>
             </div>
             <div class="flex justify-between items-start mb-3">
               <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#fa760c] transition-colors">
@@ -430,23 +481,30 @@
                   data-i18n="proj_ipa_title">Dịch IPA miễn phí</a>
               </h3>
               <a href="https://ipafree.surge.sh/" target="_blank" rel="noopener noreferrer"
-                aria-label="Open IPA Free Translator" class="text-slate-400 hover:text-slate-700 transition-colors p-1">
+                aria-label="Open IPA Free Translator" class="text-slate-400 hover:text-[#fa760c] transition-colors p-1">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
             </div>
-            <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
-              <span data-i18n="proj_ipa_desc">Phát âm tiếng Anh đúng chuẩn vì có công cụ dịch IPA miễn phí nhé.</span>
-              <br><span class="text-[#fa760c] text-sm mt-2 font-medium" data-i18n="proj_ipa_cta">🎤 Thử đọc chuẩn IPA tiếng Anh nào!</span>
+            <p class="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed" data-i18n="proj_ipa_desc">
+              Phát âm tiếng Anh đúng chuẩn vì có công cụ dịch IPA miễn phí nhé.
             </p>
+
+            <!-- Custom Callout Box with Microphone SVG -->
+            <div class="callout-pill rounded-xl px-3.5 py-2 mb-6 flex items-center gap-2 text-sm font-medium">
+              <svg class="w-4 h-4 text-[#fa760c] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+              </svg>
+              <span data-i18n="proj_ipa_cta">Thử đọc chuẩn IPA tiếng Anh nào!</span>
+            </div>
 
             <div class="flex flex-wrap gap-2 mb-6">
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">Web
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">Web
                 Speech API</span>
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">HTML5
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">HTML5
                 / JS</span>
             </div>
 
@@ -465,54 +523,64 @@
           </div>
         </article>
 
-        <!-- Project 3: TalkOrDrink -->
+        <!-- Project 3: Thầy Tư Online -->
         <article
           class="project-card group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col h-full">
-          <div class="relative aspect-video sm:aspect-[16/7] md:aspect-video overflow-hidden bg-slate-100 border-b border-slate-100">
+          <div class="relative aspect-video sm:aspect-[16/7] md:aspect-video overflow-hidden bg-orange-50/40 border-b border-stone-100">
             <img
-              src="https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765720971/other_project/talkordrink-banner-03_gyssmx.png"
-              alt="TalkOrDrink - Truth or Dare Game" width="3584" height="1184" loading="lazy" decoding="async"
+              src="https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765298289/agent/thay-tu-online-banner_bodf9j.png"
+              alt="Thầy Tư Online product preview" width="2752" height="1536"
               class="w-full h-full object-cover object-center hover-scale-img">
           </div>
           <div class="p-5 sm:p-6 md:p-7 flex-1 flex flex-col">
             <div class="mb-3 flex items-center justify-between">
-              <span class="text-xs font-semibold tracking-wider uppercase text-slate-500" data-i18n="cat_games">Games</span>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600"><span
-                  class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span></span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-orange-100/80 text-orange-900 border border-orange-300/60" data-i18n="cat_ai">AI</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50/80 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span>
+              </span>
             </div>
             <div class="flex justify-between items-start mb-3">
               <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#fa760c] transition-colors">
-                <a href="https://talkordrink.surge.sh/" target="_blank" rel="noopener noreferrer"
-                  data-i18n="proj_talkordrink_title">TalkOrDrink</a>
+                <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank" rel="noopener noreferrer">Thầy Tư
+                  Online</a>
               </h3>
-              <a href="https://talkordrink.surge.sh/" target="_blank" rel="noopener noreferrer"
-                aria-label="Open TalkOrDrink" class="text-slate-400 hover:text-slate-700 transition-colors p-1">
+              <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank" rel="noopener noreferrer"
+                aria-label="Open Thầy Tư Online"
+                class="text-slate-400 hover:text-[#fa760c] transition-colors p-1">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
             </div>
-            <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
-              <span data-i18n="proj_talkordrink_desc">Game bài Truth or Dare online cực cháy cho Gen Z. 4 bộ bài độc lạ, hiệu ứng 3D xịn xò, đảm bảo khuấy đảo mọi cuộc vui!</span>
-              <br><span class="text-[#fa760c] text-sm mt-2 font-medium" data-i18n="proj_talkordrink_cta">🍻 Chơi ngay kẻo lỡ!</span>
+            <p class="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed" data-i18n="proj_thaytu_desc">
+              Một trải nghiệm bói vui mang màu sắc văn hóa Việt, kết hợp cùng AI trong cuộc trò chuyện gần gũi và dí dỏm.
             </p>
+
+            <!-- Custom Callout Box with Sparkle / Card SVG -->
+            <div class="callout-pill rounded-xl px-3.5 py-2 mb-6 flex items-center gap-2 text-sm font-medium">
+              <svg class="w-4 h-4 text-[#fa760c] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+              </svg>
+              <span data-i18n="proj_thaytu_cta">Gieo một quẻ vui vẻ nào!</span>
+            </div>
 
             <div class="flex flex-wrap gap-2 mb-6">
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">HTML/JS</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">Python</span>
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">Tailwind</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">Google
+                GenAI</span>
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">Confetti</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">Flask</span>
             </div>
 
             <div class="mt-auto flex gap-3">
-              <a href="https://talkordrink.surge.sh/" target="_blank" rel="noopener noreferrer"
+              <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank" rel="noopener noreferrer"
                 class="primary-cta flex-1 text-center py-2.5 rounded-xl text-sm font-semibold transition-all"
-                data-i18n="btn_live_demo_talkordrink">
-                Chơi luôn
+                data-i18n="btn_live_demo_thaytu">
+                Gặp Thầy Tư
               </a>
-              <a href="https://github.com/nconghau/talkordrink" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/nconghau/thay-tu-online-adk" target="_blank" rel="noopener noreferrer"
                 class="secondary-cta flex-1 text-center py-2.5 rounded-xl text-sm font-semibold transition-all"
                 data-i18n="btn_source_code">
                 Source code
@@ -524,7 +592,7 @@
         <!-- Project 4: ThiepOnline -->
         <article
           class="project-card group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col h-full">
-          <div class="relative aspect-video sm:aspect-[16/7] md:aspect-video overflow-hidden bg-slate-100 border-b border-slate-100">
+          <div class="relative aspect-video sm:aspect-[16/7] md:aspect-video overflow-hidden bg-orange-50/40 border-b border-stone-100">
             <img
               src="https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_1200/v1765819118/other_project/thieponline-banner-02_mii6ax.png"
               alt="Thiệp Online product preview" width="2752" height="1536" loading="lazy" decoding="async"
@@ -532,9 +600,10 @@
           </div>
           <div class="p-5 sm:p-6 md:p-7 flex-1 flex flex-col">
             <div class="mb-3 flex items-center justify-between">
-              <span class="text-xs font-semibold tracking-wider uppercase text-slate-500" data-i18n="cat_tools">Tools</span>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600"><span
-                  class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span></span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-amber-50 text-amber-800 border border-amber-200/60" data-i18n="cat_tools">Tools</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50/80 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span>
+              </span>
             </div>
             <div class="flex justify-between items-start mb-3">
               <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#fa760c] transition-colors">
@@ -543,24 +612,31 @@
                   Online</a>
               </h3>
               <a href="https://thieponline.surge.sh/" target="_blank" rel="noopener noreferrer"
-                aria-label="Open Thiệp Online" class="text-slate-400 hover:text-slate-700 transition-colors p-1">
+                aria-label="Open Thiệp Online" class="text-slate-400 hover:text-[#fa760c] transition-colors p-1">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
             </div>
-            <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
-              <span data-i18n="proj_thieponline_desc">Công cụ tạo thiệp online nhanh chóng, đơn giản và đầy cảm xúc. Tùy biến ảnh, nhạc và lời chúc dễ dàng.</span>
-              <br><span class="text-[#fa760c] text-sm mt-2 font-medium" data-i18n="proj_thieponline_cta">💌 Gửi lời yêu thương ngay!</span>
+            <p class="text-sm sm:text-base text-slate-600 mb-4 leading-relaxed" data-i18n="proj_thieponline_desc">
+              Công cụ tạo thiệp online nhanh chóng, đơn giản và đầy cảm xúc. Tùy biến ảnh, nhạc và lời chúc dễ dàng.
             </p>
+
+            <!-- Custom Callout Box with Love Envelope SVG -->
+            <div class="callout-pill rounded-xl px-3.5 py-2 mb-6 flex items-center gap-2 text-sm font-medium">
+              <svg class="w-4 h-4 text-[#fa760c] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span data-i18n="proj_thieponline_cta">Gửi lời yêu thương ngay!</span>
+            </div>
 
             <div class="flex flex-wrap gap-2 mb-6">
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">HTML5/JS</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">HTML5/JS</span>
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">Tailwind</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">Tailwind</span>
               <span
-                class="px-2.5 py-1 text-xs font-medium rounded-md bg-slate-100 text-slate-600 border border-slate-200/60">Cloudinary</span>
+                class="px-2.5 py-1 text-xs font-medium rounded-md bg-orange-50/50 text-stone-600 border border-orange-100/80">Cloudinary</span>
             </div>
 
             <div class="mt-auto flex gap-3">
@@ -583,13 +659,13 @@
   </section>
 
   <!-- Brief Profile Section -->
-  <section id="about" class="py-20 relative overflow-hidden bg-slate-100/60 border-t border-slate-200/60">
+  <section id="about" class="py-20 relative overflow-hidden bg-orange-50/40 border-t border-orange-100/60">
     <div class="max-w-4xl mx-auto px-6">
-      <div class="bg-white rounded-3xl p-7 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 border border-slate-200/80 shadow-sm">
-        <!-- Avatar -->
+      <div class="bg-white rounded-3xl p-7 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 border border-orange-100 shadow-sm shadow-orange-500/5">
+        <!-- Avatar with warm orange gradient ring -->
         <div class="relative shrink-0">
           <div
-            class="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-orange-200 to-amber-100 shadow-md">
+            class="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-orange-400 via-amber-300 to-orange-200 shadow-md shadow-orange-500/20">
             <img src="https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_400/v1758115946/nconghau/haunc-avatar_jfnz1z.jpg"
               alt="nconghau Avatar" width="160" height="160" loading="lazy" decoding="async"
               class="w-full h-full rounded-full object-cover border-4 border-white shadow-inner">
@@ -600,7 +676,19 @@
         <div class="text-center md:text-left flex-1">
           <h2 class="text-3xl font-bold text-slate-900 mb-2">
             nconghau</h2>
-          <h3 class="text-lg text-slate-600 font-medium mb-4" data-i18n="profile_role">❤️ ☕</h3>
+          
+          <!-- Custom SVG Role Badge instead of raw emojis -->
+          <div class="inline-flex items-center gap-2 mb-4 bg-orange-50/80 border border-orange-200/70 px-3 py-1 rounded-full text-sm">
+            <svg class="w-4 h-4 text-rose-500 fill-rose-500" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            <span class="text-orange-300">•</span>
+            <svg class="w-4 h-4 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+            </svg>
+            <span class="text-xs font-semibold text-orange-950 uppercase tracking-wider" data-i18n="profile_role">Coffee & Code</span>
+          </div>
+
           <p class="text-slate-600 leading-relaxed mb-6 text-sm md:text-base" data-i18n="profile_bio">
             Thích biến mấy dòng code thành niềm vui hữu ích. Đam mê tạo ra mấy thứ thú vị. Liên hệ feedback mình nếu có nhé!
           </p>
@@ -615,7 +703,7 @@
             </a>
             <div class="flex gap-4 items-center pl-2">
               <a href="https://github.com/nconghau" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                class="text-slate-400 hover:text-slate-700 transition-colors"><i
+                class="text-slate-400 hover:text-slate-800 transition-colors"><i
                   class="fa-brands fa-github text-xl"></i></a>
               <a href="https://www.linkedin.com/in/cong-hau-51665a205" target="_blank" rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -633,12 +721,15 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 border-t border-slate-200 bg-white">
+  <footer class="py-8 border-t border-orange-100 bg-white">
     <div
       class="max-w-6xl mx-auto px-6 flex flex-row items-center justify-center gap-4 text-center text-slate-500 text-sm">
-      <p>@nconghau - v1.0.0</p>
+      <p class="inline-flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-[#fa760c]"></span>
+        <span>@nconghau - v1.0.0</span>
+      </p>
       <a href="https://github.com/nconghau/haupublic" target="_blank" rel="noopener noreferrer"
-        class="text-slate-400 hover:text-slate-700 transition-colors duration-200" aria-label="GitHub Repository">
+        class="text-slate-400 hover:text-slate-800 transition-colors duration-200" aria-label="GitHub Repository">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path fill-rule="evenodd"
             d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
@@ -657,11 +748,11 @@
       if (window.scrollY > 30) {
         navbar.classList.remove('px-3', 'sm:px-4', 'pt-2');
         navContainer.classList.remove('rounded-2xl', 'shadow-sm');
-        navContainer.classList.add('rounded-none', 'border-x-0', 'border-t-0', 'border-b', 'border-slate-200/90', 'shadow-sm');
+        navContainer.classList.add('rounded-none', 'border-x-0', 'border-t-0', 'border-b', 'border-orange-200/70', 'shadow-sm');
       } else {
         navbar.classList.add('px-3', 'sm:px-4', 'pt-2');
         navContainer.classList.add('rounded-2xl', 'shadow-sm');
-        navContainer.classList.remove('rounded-none', 'border-x-0', 'border-t-0', 'border-b', 'border-slate-200/90');
+        navContainer.classList.remove('rounded-none', 'border-x-0', 'border-t-0', 'border-b', 'border-orange-200/70');
       }
     });
 
@@ -671,67 +762,67 @@
         nav_projects: "Products",
         nav_about: "About",
         hero_title_1: "Hello",
-        hero_title_highlight: "Friend! ✨",
-        hero_desc: "Welcome to my little corner of fun coding projects 😎 hope they are interesting and useful to you!",
-        hero_cta: "Try them now 🚀",
+        hero_title_highlight: "Friend!",
+        hero_desc: "Welcome to my little corner of fun coding projects, hope they are interesting and useful to you!",
+        hero_cta: "Try them now",
         work_eyebrow: "My corner",
         work_title: "Fun little projects",
         status_live: "Live",
-        proj_thaytu_desc: "A playful blend of Vietnamese folk fortune-telling and AI, shaped into a warm conversational experience.",
-        proj_thaytu_cta: "✨ Draw a fun reading.",
-        btn_live_demo_thaytu: "Meet Thay Tu",
-        btn_live_demo_ipa: "Try it now",
-        btn_source_code: "Source Code",
-        proj_ipa_title: "Free IPA Translator",
-        proj_ipa_desc: "Achieve standard English pronunciation with this free IPA translation tool.",
-        proj_ipa_cta: "🎤 Try reading standard English IPA!",
-        profile_role: "❤️ ☕",
-        profile_bio: "I love turning lines of code into useful little joys and making interesting things. Feel free to send me your feedback!",
-        btn_full_profile: "About me",
         proj_talkordrink_title: "TalkOrDrink",
         proj_talkordrink_desc: "Interactive Truth or Dare card game for Gen Z. Retro Y2K vibes, 3D animations, and 4 wild decks to spice up any party.",
-        proj_talkordrink_cta: "🍻 Start the party!",
+        proj_talkordrink_cta: "Start the party now!",
         btn_live_demo_talkordrink: "Play Now",
+        proj_ipa_title: "Free IPA Translator",
+        proj_ipa_desc: "Achieve standard English pronunciation with this free IPA translation tool.",
+        proj_ipa_cta: "Try reading standard English IPA!",
+        btn_live_demo_ipa: "Try it now",
+        proj_thaytu_desc: "A playful blend of Vietnamese folk fortune-telling and AI, shaped into a warm conversational experience.",
+        proj_thaytu_cta: "Draw a fun reading now!",
+        btn_live_demo_thaytu: "Meet Thay Tu",
+        proj_thieponline_title: "Thiệp Online",
+        proj_thieponline_desc: "Create emotional online cards quickly and simply. Customize photos, music, and messages with ease.",
+        proj_thieponline_cta: "Send your love now!",
+        btn_live_demo_thieponline: "Create Card",
+        btn_source_code: "Source Code",
+        profile_role: "Coffee & Code",
+        profile_bio: "I love turning lines of code into useful little joys and making interesting things. Feel free to send me your feedback!",
+        btn_full_profile: "About me",
         cat_ai: "AI",
         cat_tools: "Tools",
         cat_games: "Games",
-        proj_thieponline_title: "Thiệp Online",
-        proj_thieponline_desc: "Create emotional online cards quickly and simply. Customize photos, music, and messages with ease.",
-        proj_thieponline_cta: "💌 Send your love now!",
-        btn_live_demo_thieponline: "Create Card",
       },
       vi: {
         nav_projects: "Sản phẩm",
         nav_about: "Về mình",
         hero_title_1: "Chào bạn",
-        hero_title_highlight: "Ghé Chơi! ✨",
-        hero_desc: "Chào mừng bạn tới góc nhỏ mấy dự án code vui vui của tui 😎 mong nó đủ thú vị và hữu ích với bạn!",
-        hero_cta: "Thử ngay nào 🚀",
+        hero_title_highlight: "Ghé Chơi!",
+        hero_desc: "Chào mừng bạn tới góc nhỏ mấy dự án code vui vui của tui, mong nó đủ thú vị và hữu ích với bạn!",
+        hero_cta: "Thử ngay nào",
         work_eyebrow: "Góc nhỏ",
         work_title: "Mấy dự án code vui vui",
         status_live: "Đang hoạt động",
-        proj_thaytu_desc: "Một trải nghiệm bói vui mang màu sắc văn hóa Việt, kết hợp cùng AI trong cuộc trò chuyện gần gũi và dí dỏm.",
-        proj_thaytu_cta: "✨ Gieo một quẻ vui vẻ nào!",
-        btn_live_demo_thaytu: "Gặp Thầy Tư",
-        btn_live_demo_ipa: "Dùng thử ngay",
-        btn_source_code: "Source code",
-        proj_ipa_title: "Dịch IPA miễn phí",
-        proj_ipa_desc: "Phát âm tiếng Anh đúng chuẩn vì có công cụ dịch IPA miễn phí nhé.",
-        proj_ipa_cta: "🎤 Thử đọc chuẩn IPA tiếng Anh nào!",
-        profile_role: "❤️ ☕",
-        profile_bio: "Thích biến mấy dòng code thành niềm vui hữu ích. Đam mê tạo ra mấy thứ thú vị. Liên hệ feedback mình nếu có nhé!",
-        btn_full_profile: "Thông tin về tui",
         proj_talkordrink_title: "TalkOrDrink",
         proj_talkordrink_desc: "Game bài Truth or Dare online cực cháy cho Gen Z. 4 bộ bài độc lạ, hiệu ứng 3D xịn xò, đảm bảo khuấy đảo mọi cuộc vui!",
-        proj_talkordrink_cta: "🍻 Chơi ngay kẻo lỡ!",
+        proj_talkordrink_cta: "Chơi ngay kẻo lỡ!",
         btn_live_demo_talkordrink: "Chơi luôn",
+        proj_ipa_title: "Dịch IPA miễn phí",
+        proj_ipa_desc: "Phát âm tiếng Anh đúng chuẩn vì có công cụ dịch IPA miễn phí nhé.",
+        proj_ipa_cta: "Thử đọc chuẩn IPA tiếng Anh nào!",
+        btn_live_demo_ipa: "Dùng thử ngay",
+        proj_thaytu_desc: "Một trải nghiệm bói vui mang màu sắc văn hóa Việt, kết hợp cùng AI trong cuộc trò chuyện gần gũi và dí dỏm.",
+        proj_thaytu_cta: "Gieo một quẻ vui vẻ nào!",
+        btn_live_demo_thaytu: "Gặp Thầy Tư",
+        proj_thieponline_title: "Thiệp Online",
+        proj_thieponline_desc: "Công cụ tạo thiệp online nhanh chóng, đơn giản và đầy cảm xúc. Tùy biến ảnh, nhạc và lời chúc dễ dàng.",
+        proj_thieponline_cta: "Gửi lời yêu thương ngay!",
+        btn_live_demo_thieponline: "Tạo thiệp ngay",
+        btn_source_code: "Source code",
+        profile_role: "Coffee & Code",
+        profile_bio: "Thích biến mấy dòng code thành niềm vui hữu ích. Đam mê tạo ra mấy thứ thú vị. Liên hệ feedback mình nếu có nhé!",
+        btn_full_profile: "Thông tin về tui",
         cat_ai: "AI",
         cat_tools: "Tools",
         cat_games: "Games",
-        proj_thieponline_title: "Thiệp Online",
-        proj_thieponline_desc: "Công cụ tạo thiệp online nhanh chóng, đơn giản và đầy cảm xúc. Tùy biến ảnh, nhạc và lời chúc dễ dàng.",
-        proj_thieponline_cta: "💌 Gửi lời yêu thương ngay!",
-        btn_live_demo_thieponline: "Tạo thiệp ngay",
       }
     };
 
