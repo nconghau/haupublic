@@ -158,8 +158,8 @@
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           colors: {
-            primary: '#7c3aed', // violet-600
-            secondary: '#3b82f6', // blue-500
+            primary: '#fa760c', // Orange from haudev (#fa760c)
+            secondary: '#405b84', // Blue-gray from haudev (#405b84)
           }
         }
       }
@@ -172,6 +172,7 @@
   <style>
     :root {
       color-scheme: light;
+      --primary-accent: #fa760c;
     }
 
     body {
@@ -195,21 +196,21 @@
     }
 
     .project-card:hover {
-      border-color: #cbd5e1;
-      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      border-color: #fed7aa;
+      box-shadow: 0 10px 25px -5px rgba(250, 118, 12, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
       transform: translateY(-2px);
     }
 
     .primary-cta {
-      background: #7c3aed;
+      background: #fa760c;
       color: #ffffff;
-      box-shadow: 0 1px 2px 0 rgba(124, 58, 237, 0.15);
+      box-shadow: 0 1px 2px 0 rgba(250, 118, 12, 0.2);
       transition: all 0.15s ease;
     }
 
     .primary-cta:hover {
-      background: #6d28d9;
-      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+      background: #e05e00;
+      box-shadow: 0 4px 12px rgba(250, 118, 12, 0.32);
       transform: translateY(-1px);
     }
 
@@ -236,7 +237,7 @@
     }
 
     :focus-visible {
-      outline: 2px solid #7c3aed;
+      outline: 2px solid #fa760c;
       outline-offset: 2px;
     }
 
@@ -265,10 +266,10 @@
 </head>
 
 <body
-  class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-violet-100 selection:text-violet-900 overflow-x-hidden relative">
+  class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-orange-100 selection:text-orange-950 overflow-x-hidden relative">
 
   <a href="#projects"
-    class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-violet-600 focus:px-4 focus:py-2 focus:text-white shadow-md">Skip
+    class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#fa760c] focus:px-4 focus:py-2 focus:text-white shadow-md">Skip
     to projects</a>
 
   <!-- Google Tag Manager (noscript) -->
@@ -280,8 +281,8 @@
   <nav class="fixed w-full z-50 top-0 px-3 sm:px-4 pt-2 transition-all duration-300" id="navbar">
     <div
       class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center glass-nav rounded-2xl shadow-sm transition-all">
-      <a href="#" class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 hover:text-violet-600 transition-colors">nconghau <span
-          class="text-violet-600">public</span><span class="text-violet-600">.</span></a>
+      <a href="#" class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 hover:text-[#fa760c] transition-colors">nconghau <span
+          class="text-[#fa760c]">public</span><span class="text-[#fa760c]">.</span></a>
       <div class="flex items-center gap-2 sm:gap-4">
         <div class="hidden sm:flex gap-5 text-sm font-medium text-slate-600">
           <a href="#projects" class="hover:text-slate-900 transition-colors" data-i18n="nav_projects">Sản phẩm</a>
@@ -308,9 +309,9 @@
       <div
         class="bg-white/95 backdrop-blur-md rounded-2xl p-5 flex flex-col gap-3 text-center border border-slate-200/90 shadow-xl">
         <a href="#projects"
-          class="text-base font-medium text-slate-700 hover:text-violet-600 transition-colors py-2 border-b border-slate-100"
+          class="text-base font-medium text-slate-700 hover:text-[#fa760c] transition-colors py-2 border-b border-slate-100"
           data-i18n="nav_projects" onclick="toggleMobileMenu()">Sản phẩm</a>
-        <a href="#about" class="text-base font-medium text-slate-700 hover:text-violet-600 transition-colors py-2" data-i18n="nav_about"
+        <a href="#about" class="text-base font-medium text-slate-700 hover:text-[#fa760c] transition-colors py-2" data-i18n="nav_about"
           onclick="toggleMobileMenu()">Về mình</a>
       </div>
     </div>
@@ -322,7 +323,7 @@
       <div class="mb-14 md:mb-16 max-w-4xl">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 tracking-[-0.04em] leading-[1.08] text-slate-900">
           <span data-i18n="hero_title_1">Chào bạn</span>
-          <span class="text-violet-600"
+          <span class="text-[#fa760c]"
             data-i18n="hero_title_highlight">Ghé Chơi! ✨</span>
           <span class="sr-only"> - nconghau creative lab | Các dự án công nghệ, phần mềm mã nguồn mở & thử nghiệm AI</span>
         </h1>
@@ -342,7 +343,7 @@
 
       <div id="selected-work" class="mb-6 flex items-end justify-between gap-4 scroll-mt-28">
         <div>
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-violet-600" data-i18n="work_eyebrow">Góc nhỏ</p>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#fa760c]" data-i18n="work_eyebrow">Góc nhỏ</p>
           <h2 class="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-slate-900" data-i18n="work_title">Mấy dự án code vui vui</h2>
         </div>
       </div>
@@ -365,7 +366,7 @@
                   class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span></span>
             </div>
             <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-violet-600 transition-colors">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#fa760c] transition-colors">
                 <a href="https://nconghau-thay-tu-online.hf.space/" target="_blank" rel="noopener noreferrer">Thầy Tư
                   Online</a>
               </h3>
@@ -379,7 +380,7 @@
             </div>
             <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
               <span data-i18n="proj_thaytu_desc">Một trải nghiệm bói vui mang màu sắc văn hóa Việt, kết hợp cùng AI trong cuộc trò chuyện gần gũi và dí dỏm.</span>
-              <br><span class="text-violet-600 text-sm mt-2 font-medium" data-i18n="proj_thaytu_cta">✨ Gieo một quẻ vui vẻ nào!</span>
+              <br><span class="text-[#fa760c] text-sm mt-2 font-medium" data-i18n="proj_thaytu_cta">✨ Gieo một quẻ vui vẻ nào!</span>
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
@@ -424,7 +425,7 @@
                   class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span></span>
             </div>
             <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-violet-600 transition-colors">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#fa760c] transition-colors">
                 <a href="https://ipafree.surge.sh/" target="_blank" rel="noopener noreferrer"
                   data-i18n="proj_ipa_title">Dịch IPA miễn phí</a>
               </h3>
@@ -437,7 +438,7 @@
             </div>
             <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
               <span data-i18n="proj_ipa_desc">Phát âm tiếng Anh đúng chuẩn vì có công cụ dịch IPA miễn phí nhé.</span>
-              <br><span class="text-violet-600 text-sm mt-2 font-medium" data-i18n="proj_ipa_cta">🎤 Thử đọc chuẩn IPA tiếng Anh nào!</span>
+              <br><span class="text-[#fa760c] text-sm mt-2 font-medium" data-i18n="proj_ipa_cta">🎤 Thử đọc chuẩn IPA tiếng Anh nào!</span>
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
@@ -480,7 +481,7 @@
                   class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span></span>
             </div>
             <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-violet-600 transition-colors">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#fa760c] transition-colors">
                 <a href="https://talkordrink.surge.sh/" target="_blank" rel="noopener noreferrer"
                   data-i18n="proj_talkordrink_title">TalkOrDrink</a>
               </h3>
@@ -493,7 +494,7 @@
             </div>
             <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
               <span data-i18n="proj_talkordrink_desc">Game bài Truth or Dare online cực cháy cho Gen Z. 4 bộ bài độc lạ, hiệu ứng 3D xịn xò, đảm bảo khuấy đảo mọi cuộc vui!</span>
-              <br><span class="text-violet-600 text-sm mt-2 font-medium" data-i18n="proj_talkordrink_cta">🍻 Chơi ngay kẻo lỡ!</span>
+              <br><span class="text-[#fa760c] text-sm mt-2 font-medium" data-i18n="proj_talkordrink_cta">🍻 Chơi ngay kẻo lỡ!</span>
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
@@ -536,7 +537,7 @@
                   class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span><span data-i18n="status_live">Đang hoạt động</span></span>
             </div>
             <div class="flex justify-between items-start mb-3">
-              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-violet-600 transition-colors">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#fa760c] transition-colors">
                 <a href="https://thieponline.surge.sh/" target="_blank" rel="noopener noreferrer"
                   data-i18n="proj_thieponline_title">Thiệp
                   Online</a>
@@ -550,7 +551,7 @@
             </div>
             <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
               <span data-i18n="proj_thieponline_desc">Công cụ tạo thiệp online nhanh chóng, đơn giản và đầy cảm xúc. Tùy biến ảnh, nhạc và lời chúc dễ dàng.</span>
-              <br><span class="text-violet-600 text-sm mt-2 font-medium" data-i18n="proj_thieponline_cta">💌 Gửi lời yêu thương ngay!</span>
+              <br><span class="text-[#fa760c] text-sm mt-2 font-medium" data-i18n="proj_thieponline_cta">💌 Gửi lời yêu thương ngay!</span>
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
@@ -588,7 +589,7 @@
         <!-- Avatar -->
         <div class="relative shrink-0">
           <div
-            class="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-violet-200 to-indigo-100 shadow-md">
+            class="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-orange-200 to-amber-100 shadow-md">
             <img src="https://res.cloudinary.com/dkeupjars/image/upload/f_auto,q_auto,w_400/v1758115946/nconghau/haunc-avatar_jfnz1z.jpg"
               alt="nconghau Avatar" width="160" height="160" loading="lazy" decoding="async"
               class="w-full h-full rounded-full object-cover border-4 border-white shadow-inner">
